@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: dim_consultant
+    description: "Consultant dimension (Type 1) — current attributes plus derived hire/termination dates from CONSULTANTTITLEHISTORY"
+    columns:
+      - name: consultant_key
+        description: "Surrogate key"
+        tests:
+          - not_null
+          - unique
+      - name: consultant_id
+        description: "Natural key from CONSULTANT.CONSULTANTID"
+        tests:
+          - not_null
+          - unique
+      - name: full_name
+        tests:
+          - not_null
+      - name: business_unit_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_business_unit')
+              field: business_unit_id
+      - name: hire_date
+        tests:
+          - not_null
+      - name: employment_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Active', 'Terminated']
+
+  - name: dim_title
+    description: "Title dimension — T1–T6 with derived numeric seniority rank"
+    columns:
+      - name: title_key
+        tests:
+          - not_null
+          - unique
+      - name: title_id
+        tests:
+          - not_null
+          - unique
+      - name: title_name
+        tests:
+          - not_null
+      - name: level_rank
+        tests:
+          - not_null
+
+  - name: fact_hr_monthly
+    description: "HR monthly snapshot fact — one row per consultant per month with utilization, salary, headcount, and promotion flags"
+    columns:
+      - name: hr_monthly_key
+        tests:
+          - not_null
+          - unique
+      - name: consultant_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_consultant')
+              field: consultant_key
+      - name: title_key
+        tests:
+          - relationships:
+              to: ref('dim_title')
+              field: title_key
+      - name: business_unit_key
+        tests:
+          - relationships:
+              to: ref('dim_business_unit')
+              field: business_unit_key
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: month_start_date
+        tests:
+          - not_null
+      - name: billable_hours
+        tests:
+          - not_null
+      - name: utilization_rate
+        tests:
+          - not_null
+      - name: headcount_flag
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: is_promoted
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
