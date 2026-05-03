@@ -3,8 +3,8 @@ financial_report:
   outputs:
     dev:
       type: snowflake
-      account: ""
-      user: ""
+      account: "UP88733"
+      user: "SHAWN021003"
       role: ACCOUNTADMIN
       database: ISE558_D3
       warehouse: COMPUTE_WH
