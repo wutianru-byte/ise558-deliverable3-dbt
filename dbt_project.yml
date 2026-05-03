@@ -1,0 +1,27 @@
+name: 'ise558_deliverable3'
+version: '1.0.0'
+config-version: 2
+
+profile: 'financial_report'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  ise558_deliverable3:
+    +materialized: table
+
+    financial:
+      +schema: FINANCIAL_DM
+
+    project_delivery:
+      +schema: PROJECT_DELIVERY_DM
+
+    hr:
+      +schema: HR_DM
