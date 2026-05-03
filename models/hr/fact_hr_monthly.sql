@@ -8,7 +8,7 @@ monthly_hours AS (
         CONSULTANTID,
         DATE_TRUNC('MONTH', TRY_TO_DATE(DATE)) AS month_start_date,
         SUM(BILLABLE_HOURS)                    AS billable_hours,
-        SUM(NON_BILLABLE_HOURS)                AS non_billable_hours
+        SUM(TABLE_NONBILLABLEHOURS)            AS non_billable_hours
     FROM {{ source('consulting', 'NON_BILLABLE_HOURS') }}
     GROUP BY CONSULTANTID, DATE_TRUNC('MONTH', TRY_TO_DATE(DATE))
 ),
