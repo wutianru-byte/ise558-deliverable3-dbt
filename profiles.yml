@@ -1,0 +1,12 @@
+financial_report:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ""
+      user: ""
+      role: ACCOUNTADMIN
+      database: ISE558_D3
+      warehouse: COMPUTE_WH
+      schema: PROJECT_DELIVERY_DM
+      threads: 4
