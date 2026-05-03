@@ -16,12 +16,3 @@ clean-targets:
 models:
   ise558_deliverable3:
     +materialized: table
-
-    financial:
-      +schema: FINANCIAL_DM
-
-    project_delivery:
-      +schema: PROJECT_DELIVERY_DM
-
-    hr:
-      +schema: HR_DM
