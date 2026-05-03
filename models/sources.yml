@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: consulting
+    database: CONSULTING_DB_INITIAL
+    schema: CONSULTING
+
+    tables:
+      - name: CONSULTANT
+      - name: CONSULTANTTITLEHISTORY
+      - name: TITLE
+      - name: NON_BILLABLE_HOURS
+      - name: PAYROLL
