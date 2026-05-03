@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: dim_project
+    columns:
+      - name: project_key
+        tests:
+          - not_null
+          - unique
+      - name: project_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_deliverable
+    columns:
+      - name: deliverable_key
+        tests:
+          - not_null
+          - unique
+      - name: deliverable_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_client
+    columns:
+      - name: client_key
+        tests:
+          - not_null
+          - unique
+      - name: client_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_business_unit
+    columns:
+      - name: business_unit_key
+        tests:
+          - not_null
+          - unique
+      - name: business_unit_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests:
+          - not_null
+          - unique
+      - name: month_start_date
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_project_delivery_snapshot
+    columns:
+      - name: project_delivery_snapshot_key
+        tests:
+          - not_null
+          - unique
+      - name: project_key
+        tests:
+          - not_null
+      - name: deliverable_key
+        tests:
+          - not_null
+      - name: date_key
+        tests:
+          - not_null
