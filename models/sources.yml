@@ -6,8 +6,19 @@ sources:
     schema: CONSULTING
 
     tables:
+      # ---- Existing (used by project_delivery / hr) ----
       - name: CONSULTANT
       - name: CONSULTANTTITLEHISTORY
       - name: TITLE
       - name: NON_BILLABLE_HOURS
       - name: PAYROLL
+
+      # ---- Added for financial datamart (Haichuan) ----
+      - name: BUSINESSUNIT
+      - name: CLIENT
+      - name: CONSULTANTDELIVERABLE
+      - name: DELIVERABLE
+      - name: LOCATION
+      - name: PROJECT
+      - name: PROJECTBILLINGRATE
+      - name: PROJECTEXPENSE

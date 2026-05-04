@@ -1,18 +1,48 @@
 name: 'ise558_deliverable3'
 version: '1.0.0'
 config-version: 2
-
 profile: 'financial_report'
-
 model-paths: ["models"]
 test-paths: ["tests"]
 macro-paths: ["macros"]
-
+snapshot-paths: ["snapshots"]
 target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
 
+# ==============================================================================
+# Per-folder materialization + schema strategy.
+# Each datamart writes to its own schema to avoid name collisions on
+# conformed dimensions (dim_project, dim_date, etc.).
+# ==============================================================================
 models:
   ise558_deliverable3:
     +materialized: table
+
+    # Existing teammates' folders (unchanged behavior — defaults to table in default schema)
+    project_delivery:
+      +materialized: table
+    hr:
+      +materialized: table
+
+    # Financial DataMart (Haichuan)
+    financial:
+      +schema: financial            # writes to <profile_schema>_financial
+      staging:
+        +materialized: view
+      intermediate:
+        +materialized: ephemeral
+      conformed:
+        +schema: financial_conformed
+      facts:
+        +schema: financial
+
+# ==============================================================================
+# Snapshot config (dbt-managed SCD2)
+# ==============================================================================
+snapshots:
+  ise558_deliverable3:
+    +target_schema: financial_snapshots
+    +strategy: check
+    +invalidate_hard_deletes: true
