@@ -1,0 +1,140 @@
+<mxfile host="app.diagrams.net" pages="3">
+  <diagram name="1. Project Financial Snapshot" id="page1">
+    <mxGraphModel dx="1478" dy="961" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1" value="Financial Reporting Datamart — FactProjectFinancialSnapshot" vertex="1">
+          <mxGeometry height="30" width="900" x="300" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#555555;fontStyle=2" value="Grain: One row per project per month  (Periodic Snapshot)" vertex="1">
+          <mxGeometry height="25" width="900" x="300" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fact" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#990000;strokeColor=#4d0000;fontColor=#FFFFFF" value="&lt;b&gt;FactProjectFinancialSnapshot&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; month_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; project_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; client_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; business_unit_key&lt;/span&gt;&lt;br/&gt;&lt;hr size=&quot;1&quot;/&gt;contract_value&lt;br/&gt;revenue_recognized&lt;br/&gt;cumulative_revenue&lt;br/&gt;labor_cost&lt;br/&gt;expense_cost&lt;br/&gt;total_cost&lt;br/&gt;cumulative_cost&lt;br/&gt;forecast_remaining_cost&lt;br/&gt;expected_total_cost&lt;br/&gt;expected_profit&lt;br/&gt;profit_margin_pct&lt;br/&gt;progress_pct&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="320" width="240" x="580" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_date" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimDate&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; date_key&lt;br/&gt;full_date&lt;br/&gt;calendar_year&lt;br/&gt;calendar_quarter&lt;br/&gt;calendar_month&lt;br/&gt;month_name&lt;br/&gt;day_of_month&lt;br/&gt;day_of_week&lt;br/&gt;is_month_end&lt;br/&gt;is_quarter_end&lt;br/&gt;is_weekend&lt;br/&gt;year_month_int&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="200" x="80" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_proj" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimProject  (SCD2)&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; project_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; client_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; business_unit_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; planned_start_date_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; planned_end_date_key&lt;br/&gt;project_id  (NK)&lt;br/&gt;project_name&lt;br/&gt;project_type  (Fixed / Time and Material)&lt;br/&gt;project_status&lt;br/&gt;contract_value (NULL on T&amp;amp;M)&lt;br/&gt;estimated_budget&lt;br/&gt;planned_hours&lt;br/&gt;progress_pct&lt;br/&gt;actual_start_date_key&lt;br/&gt;actual_end_date_key&lt;br/&gt;dbt_valid_from / dbt_valid_to&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="240" x="1100" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_client" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimClient&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; client_key&lt;br/&gt;client_id  (NK)&lt;br/&gt;client_name&lt;br/&gt;state&lt;br/&gt;city&lt;br/&gt;phone&lt;br/&gt;email&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="200" x="80" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_bu" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimBusinessUnit&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; business_unit_key&lt;br/&gt;business_unit_id  (NK)&lt;br/&gt;bu_name  (= region:&lt;br/&gt;&amp;nbsp;&amp;nbsp;NA / EMEA / APAC / CSA)&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="230" x="1100" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e1" edge="1" parent="1" source="p1_date" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERzeroToMany" target="p1_fact" value="snapshot_month">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e2" edge="1" parent="1" source="p1_proj" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" target="p1_fact" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e3" edge="1" parent="1" source="p1_client" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" target="p1_fact" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e4" edge="1" parent="1" source="p1_bu" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" target="p1_fact" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;verticalAlign=top;fontSize=11" value="&lt;b&gt;Cardinality Legend&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;|| &amp;nbsp; mandatory exactly one (ERmandOne)&lt;br/&gt;○| &amp;nbsp; zero or one — optional (ERzeroToOne)&lt;br/&gt;|&amp;lt; &amp;nbsp; one or many (ERoneToMany)&lt;br/&gt;○&amp;lt; &amp;nbsp; zero or many (ERzeroToMany)&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Color coding:&lt;/b&gt;&lt;br/&gt;&lt;span style=&#39;color:#990000&#39;&gt;■&lt;/span&gt; Fact (red)&lt;br/&gt;&lt;span style=&#39;color:#B8860B&#39;&gt;■&lt;/span&gt; Dim (gold)&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;FK&lt;/span&gt; = Foreign Key" vertex="1">
+          <mxGeometry height="160" width="240" x="530" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2. Labor Cost" id="page2">
+    <mxGraphModel dx="1888" dy="1211" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p2_title" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1" value="Financial Reporting Datamart — FactLaborCost">
+          <mxGeometry height="30" width="900" x="300" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_subtitle" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#555555;fontStyle=2" value="Grain: One row per consultant per deliverable per month">
+          <mxGeometry height="25" width="900" x="300" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_fact" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#990000;strokeColor=#4d0000;fontColor=#FFFFFF" value="&lt;b&gt;FactLaborCost&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; month_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; consultant_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; deliverable_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; project_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; title_key&lt;/span&gt;&lt;br/&gt;&lt;hr size=&quot;1&quot;/&gt;hours_worked&lt;br/&gt;internal_cost_rate&lt;br/&gt;labor_cost_amount&lt;br/&gt;billing_rate&lt;br/&gt;billing_amount  (T&amp;amp;M only)&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="240" width="240" x="580" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_date" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimDate&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; date_key&lt;br/&gt;full_date&lt;br/&gt;calendar_year&lt;br/&gt;calendar_month&lt;br/&gt;year_month_int&lt;br/&gt;is_month_end&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="160" width="200" x="80" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_proj" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimProject  (SCD2)&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; project_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; client_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; business_unit_key&lt;br/&gt;project_id&lt;br/&gt;project_name&lt;br/&gt;project_type&lt;br/&gt;project_status&lt;br/&gt;contract_value&lt;br/&gt;...&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="200" width="220" x="1100" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_consult" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimConsultant  (SCD2)&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; consultant_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; business_unit_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; current_title_key&lt;br/&gt;consultant_id  (NK)&lt;br/&gt;first_name&lt;br/&gt;last_name&lt;br/&gt;email&lt;br/&gt;hire_year&lt;br/&gt;current_salary&lt;br/&gt;employment_status&lt;br/&gt;dbt_valid_from / dbt_valid_to&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="240" width="240" x="1100" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_title_dim" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimConsultantTitle&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; title_key&lt;br/&gt;title_id  (NK)&lt;br/&gt;title_name&lt;br/&gt;title_level  (1-6)&lt;br/&gt;&amp;nbsp;&amp;nbsp;1=Junior Consultant&lt;br/&gt;&amp;nbsp;&amp;nbsp;2=Consultant&lt;br/&gt;&amp;nbsp;&amp;nbsp;3=Senior Consultant&lt;br/&gt;&amp;nbsp;&amp;nbsp;4=Lead Consultant&lt;br/&gt;&amp;nbsp;&amp;nbsp;5=Project Manager&lt;br/&gt;&amp;nbsp;&amp;nbsp;6=Vice President&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="220" width="220" x="80" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_deliv" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimDeliverable&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; deliverable_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; project_key&lt;br/&gt;deliverable_id  (NK)&lt;br/&gt;deliverable_name&lt;br/&gt;planned_start_date_key&lt;br/&gt;due_date_key&lt;br/&gt;submission_date_key  (nullable)&lt;br/&gt;invoiced_date_key  (nullable)&lt;br/&gt;planned_hours&lt;br/&gt;price (nullable, FP only)&lt;br/&gt;status  (Not Started/In Progress/Completed)&lt;br/&gt;progress_pct&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="240" width="240" x="580" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e1" parent="1" edge="1" source="p2_date" target="p2_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERzeroToMany" value="labor_month">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e2" parent="1" edge="1" source="p2_proj" target="p2_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e3" parent="1" edge="1" source="p2_consult" target="p2_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERzeroToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e4" parent="1" edge="1" source="p2_title_dim" target="p2_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_e5" parent="1" edge="1" source="p2_deliv" target="p2_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERzeroToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2_legend" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;verticalAlign=top;fontSize=11" value="&lt;b&gt;Cardinality Notes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;DimConsultant → Fact: &lt;b&gt;○&amp;lt;&lt;/b&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Some consultants may have no labor records yet&lt;br/&gt;&lt;br/&gt;DimDeliverable → Fact: &lt;b&gt;○&amp;lt;&lt;/b&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;60 of 113 deliverables are &#39;Not Started&#39;&lt;br/&gt;&lt;br/&gt;DimDate → Fact: &lt;b&gt;○&amp;lt;&lt;/b&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Date dim is pre-populated for 11 years">
+          <mxGeometry height="220" width="280" x="80" y="700" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3. Project Expense" id="page3">
+    <mxGraphModel dx="1888" dy="1211" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p3_title" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1" value="Financial Reporting Datamart — FactProjectExpense">
+          <mxGeometry height="30" width="900" x="300" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_subtitle" parent="1" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#555555;fontStyle=2" value="Grain: One row per expense line item">
+          <mxGeometry height="25" width="900" x="300" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_fact" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#990000;strokeColor=#4d0000;fontColor=#FFFFFF" value="&lt;b&gt;FactProjectExpense&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; date_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; project_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; deliverable_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD700&#39;&gt;&lt;b&gt;FK&lt;/b&gt; category_key&lt;/span&gt;&lt;br/&gt;&lt;span style=&#39;color:#FFD0D0&#39;&gt;&lt;b&gt;DD&lt;/b&gt; expense_id&lt;/span&gt;&lt;br/&gt;&lt;hr size=&quot;1&quot;/&gt;expense_amount&lt;br/&gt;is_billable&lt;br/&gt;description (degenerate)&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="240" width="240" x="580" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_date" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimDate&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; date_key&lt;br/&gt;full_date&lt;br/&gt;calendar_year&lt;br/&gt;calendar_month&lt;br/&gt;year_month_int&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="140" width="200" x="80" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_proj" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimProject  (SCD2)&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; project_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; client_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; business_unit_key&lt;br/&gt;project_id&lt;br/&gt;project_name&lt;br/&gt;project_type&lt;br/&gt;contract_value&lt;br/&gt;...&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="180" width="220" x="1100" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_deliv" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimDeliverable&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; deliverable_key&lt;br/&gt;&lt;b&gt;FK&lt;/b&gt; project_key&lt;br/&gt;deliverable_id  (NK)&lt;br/&gt;deliverable_name&lt;br/&gt;status&lt;br/&gt;progress_pct&lt;br/&gt;price&lt;br/&gt;...&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="180" width="220" x="80" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_cat" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;verticalAlign=top;fontSize=12;fillColor=#FFF4D6;strokeColor=#B8860B;fontColor=#000000" value="&lt;b&gt;DimExpenseCategory&lt;/b&gt;&lt;hr size=&quot;1&quot;&gt;&lt;div style=&#39;text-align:left;padding-left:10px&#39;&gt;&lt;b&gt;PK&lt;/b&gt; category_key&lt;br/&gt;category_name&lt;br/&gt;&lt;i&gt;10 distinct values:&lt;/i&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Travel, Subcontractor Fees,&lt;br/&gt;&amp;nbsp;&amp;nbsp;Training, Software Licenses,&lt;br/&gt;&amp;nbsp;&amp;nbsp;Telecommunication, Equipment,&lt;br/&gt;&amp;nbsp;&amp;nbsp;Office Supplies, Miscellaneous,&lt;br/&gt;&amp;nbsp;&amp;nbsp;Client Entertainment,&lt;br/&gt;&amp;nbsp;&amp;nbsp;Legal &amp;amp; Professional Fees&lt;br/&gt;&lt;/div&gt;">
+          <mxGeometry height="220" width="260" x="1100" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e1" parent="1" edge="1" source="p3_date" target="p3_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERzeroToMany" value="expense_date">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e2" parent="1" edge="1" source="p3_proj" target="p3_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e3" parent="1" edge="1" source="p3_deliv" target="p3_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERzeroToOne;endArrow=ERzeroToMany" value="DELIVERABLEID nullable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_e4" parent="1" edge="1" source="p3_cat" target="p3_fact" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;html=1;rounded=0;strokeColor=#4d4d4d;startFill=0;endFill=0;startArrow=ERmandOne;endArrow=ERoneToMany" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3_legend" parent="1" vertex="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;verticalAlign=top;fontSize=11" value="&lt;b&gt;Cardinality Notes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;DimDeliverable → Fact: &lt;b&gt;○|&lt;/b&gt; (zero or one)&lt;br/&gt;&amp;nbsp;&amp;nbsp;Source DELIVERABLEID is nullable —&lt;br/&gt;&amp;nbsp;&amp;nbsp;some expenses may be project-level&lt;br/&gt;&amp;nbsp;&amp;nbsp;only (e.g., overhead allocation).&lt;br/&gt;&lt;br/&gt;DimProject → Fact: &lt;b&gt;||&lt;/b&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Every expense must have a project.">
+          <mxGeometry height="200" width="240" x="320" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
